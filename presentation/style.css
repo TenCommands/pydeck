@@ -1,0 +1,217 @@
+/* style.css - Cornflower Blue Theme with Animations */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background: linear-gradient(145deg, #f5f9ff 0%, #e3f0ff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Presentation Slide Container */
+#presentation {
+  background: white;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(100, 149, 237, 0.5),
+              0 10px 20px -5px rgba(0, 20, 80, 0.2);
+  padding: 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.8s ease-out;
+  border: 1px solid rgba(100, 149, 237, 0.3);
+}
+
+/* Decorative blue accent line */
+#presentation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #6495ED, #96b9f2, #6495ED);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #1e3a8a; /* deep navy for contrast */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #1e3a8a, #3b6cd9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeIn 1s;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-left: 8px solid #6495ED;
+  padding-left: 1.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c4b9a;
+}
+
+/* Text & Lists */
+p, li {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #1e293b;
+}
+
+ul, ol {
+  padding-left: 2rem;
+  margin: 1.5rem 0;
+}
+
+li {
+  margin: 0.8rem 0;
+  animation: fadeInLeft 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+/* staggered list animation */
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+li:nth-child(6) { animation-delay: 0.6s; }
+
+/* Cards for features / demo */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #f8fcff;
+  border-radius: 2rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 20px -8px rgba(100, 149, 237, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(100, 149, 237, 0.3);
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px -10px #6495ED80;
+  border-color: #6495ED;
+}
+
+.card i { /* placeholder for icon */
+  font-size: 3rem;
+  color: #6495ED;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* Buttons / CTAs */
+.cta {
+  background: #6495ED;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 4rem;
+  box-shadow: 0 10px 20px -5px #1e3a8a80;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #4178d0;
+  transform: scale(1.02);
+  box-shadow: 0 15px 25px -5px #1e3a8a;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Speaker Notes - hidden from view */
+#speaker-notes {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  #presentation {
+    padding: 2rem;
+  }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  p, li { font-size: 1.1rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
