@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0a192f, #112240);
+    color: white;
+}
+
+/* LAYOUT */
+#presentation {
+    width: 100vw;
+    height: 100vh;
+    padding: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* BRAND */
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64ffda;
+}
+
+.slide-number {
+    position: absolute;
+    bottom: 50px;
+    right: 90px;
+    font-size: 14px;
+    opacity: 0.4;
+    letter-spacing: 2px;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-size: 68px;
+    font-weight: 800;
+    margin: 0 0 40px 0;
+}
+
+h2 {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+}
+
+.subtitle {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+.center {
+    max-width: 1200px;
+}
+
+/* GLASS CARDS */
+.card-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 340px;
+    padding: 45px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.6),
+        0 0 60px rgba(100,255,218,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 50px 100px rgba(0,0,0,0.7),
+        0 0 80px rgba(100,255,218,0.12);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #64ffda;
+}
+
+.card p {
+    font-size: 22px;
+    opacity: 0.85;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+li::before {
+    content: "•";
+    color: #64ffda;
+    margin-right: 12px;
+}
+
+.highlight {
+    color: #64ffda;
+    font-weight: 700;
+}
